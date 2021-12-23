@@ -106,7 +106,8 @@ def inter():
         popt, pcov= curve_fit(func, x, y, [100,400,0.001,0])
         def Gexp(popt,pcov, x):
             plt.title("Экспоненциальная аппроксимация", fontsize= 20, color= "orange")
-            print(popt, plot(x,y, color= "black"))
+            print(popt)
+            plot(x,y, color= "black")
             x= linspace(0, 1, input1)
             plt.plot(x, func(x, *popt), color= "r")
             plt.show() 
