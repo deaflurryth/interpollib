@@ -1,7 +1,5 @@
-# optimlib
+# interpollib
 # usage:
-from optimlib import *
+import interpollib
 
-optimlib.CompactAnn()
-
-optimlib.CompactACO()
+interpollib.inter()
