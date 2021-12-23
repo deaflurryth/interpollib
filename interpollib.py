@@ -100,6 +100,7 @@ def inter():
         input1= len(x)
     print('___________________')
     if predator== 1:
+        import matplotlib.pyplot as plt
         def func(x, a, b, c, d):
             return a*np.exp(-c*(x*b))+d #формула
         popt, pcov= curve_fit(func, x, y, [100,400,0.001,0])

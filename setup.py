@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 long_description= '''Python module for interpolation tasks tasks'''
 setup(name='interpollib',
-      version='1.2',
+      version='1.3',
       url='https://github.com/deaflurryth/interpollib',
       license='MIT',
       author='deaflurryth',
