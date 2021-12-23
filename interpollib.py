@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from matplotlib import pyplot as mp
 import numpy as np
 import math
 from math import sqrt, log
@@ -100,28 +99,17 @@ def inter():
         input1= len(x)
     print('___________________')
     if predator== 1:
-        import matplotlib.pyplot as plt
         def func(x, a, b, c, d):
             return a*np.exp(-c*(x*b))+d #формула
         popt, pcov= curve_fit(func, x, y, [100,400,0.001,0])
         def Gexp(popt,pcov, x):
             plt.title("Экспоненциальная аппроксимация", fontsize= 20, color= "orange")
             print(popt)
-            plot(x,y, color= "black")
+            plt.plot(x,y, color= "black")
             x= linspace(0, 1, input1)
             plt.plot(x, func(x, *popt), color= "r")
             plt.show() 
         Gexp(popt,pcov,x)
-
-        sled= len(y)
-        attack= list(range(1, sled+ 1))
-        rows= zip(attack, x, y, func(x,*popt))
-        with open('m_matrix.csv', mode = "w") as w_file:
-            tabletka= csv.writer(w_file, lineterminator= "\r")
-            tabletka.writerow(["Index", "x", "y",'y_vals'])
-            for row in rows:
-                tabletka.writerow(row)
-        pd.read_csv('m_matrix.csv')
     elif predator== 2:
         def polynomial_fitting(data_x,data_y):
             #headpack
@@ -296,7 +284,6 @@ def inter():
         hatedmethod= d_rejoin(x, parameters)
         Gnew(hatedmethod)
     elif predator== 4:
-        import matplotlib.pyplot as plt
 
         def lagran(x,y,t):
             z=0
@@ -317,20 +304,19 @@ def inter():
         plt.grid()
         plt.show()
     elif predator== 5:
-        import matplotlib.pyplot as plt
+
         def Gauss(x, x0,sigma):
             return np.exp(-np.power((x- x0)/ sigma, 2.)/ 2.)
 
         x_values= np.linspace(-3, 3, 120)
         space= [[w,z] for w, z in zip(x, y)]
         for my, sig in space:
-            mp.plot(x_values, Gauss(x_values, my, sig))
+            plt.plot(x_values, Gauss(x_values, my, sig))
 
         plt.title("ф. Нормального распределения", fontsize= 20, color= "orange")
         plt.show()
         tetra= Gauss(x,y,sig)
     elif predator== 6:
-        import matplotlib.pyplot as plt
         def applog(n, x1):
             a= (1+ x1)/ 2
             b= sqrt(x1)
@@ -356,7 +342,6 @@ def inter():
             #fig.set_figheight(50)
         Glog(allowed_n, colors)
     elif predator== 7:
-        import matplotlib.pyplot as plt
         def sigmoid(x): #монотонно возрастающая
             return 1.0 / (1.0 + np.exp(-x)) 
 
@@ -475,7 +460,6 @@ def inter():
             #plt.show()
         #Gtrin2(x,y, y_pred)
     elif predator== 8:
-        import matplotlib.pyplot as plt
         def compute_changes(x: List[float]) -> List[float]:
             return [x[i+1] - x[i] for i in range(len(x) - 1)]
 
