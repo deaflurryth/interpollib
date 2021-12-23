@@ -15,5 +15,5 @@ Advice:
 """
 from .interpollib import inter
 __author__ = 'deaflurryth'
-__version__ = '1.3'
+__version__ = '1.4'
 
